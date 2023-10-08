@@ -1,0 +1,56 @@
+<div id="reminders-container" *ngIf="isAuthenticated">
+  <div id="title"><h1>Recordatorios</h1></div>
+  <form [formGroup]="form" (ngSubmit)="addReminder()" id="form-container">
+    <ion-item>
+      <ion-input
+        label="Fecha"
+        type="date"
+        formControlName="fecha"
+        id="date"
+        min="{{ today }}"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea
+        label="Informacion"
+        formControlName="informacion"
+        id="info"
+      ></ion-textarea>
+      <span id="span-style" *ngIf="showRequireText">Campo obligatorio</span>
+    </ion-item>
+
+    <ion-button type="submit">Guardar</ion-button>
+  </form>
+
+  <form id="form-list">
+    <ion-card *ngFor="let b of reminders" class="card-style">
+      <ion-card-header>
+        <ion-card-title>{{ b.date }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>{{ b.info }} </ion-card-content>
+      <div *ngIf="showEditForm && editingId === b.id">
+        <!-- FORMULARIO DE EDICIÓN -->
+        <form [formGroup]="formEdit" (ngSubmit)="editReminder(b.id)">
+          <ion-item>
+            <ion-input
+              label="Fecha"
+              type="date"
+              formControlName="fechaEdit"
+              id="date-edit"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-textarea
+              label="Informacion"
+              formControlName="informacionEdit"
+              id="info-edit"
+            ></ion-textarea>
+          </ion-item>
+          <ion-button type="submit">Guardar</ion-button>
+        </form>
+      </div>
+      <ion-button (click)="deleteReminder(b.id)">Borrar</ion-button>
+      <ion-button (click)="editButton(b, b.id)">Editar</ion-button>
+    </ion-card>
+  </form>
+</div>

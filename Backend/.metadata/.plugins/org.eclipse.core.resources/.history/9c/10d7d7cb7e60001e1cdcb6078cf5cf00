@@ -1,0 +1,5 @@
+package com.kirian.reminders.entity.services;
+
+public interface IUsersService {
+
+}

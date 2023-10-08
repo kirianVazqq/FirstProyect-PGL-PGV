@@ -1,0 +1,5 @@
+package com.kirian.reminders.entity.models;
+
+public class Users {
+
+}

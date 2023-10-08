@@ -1,0 +1,30 @@
+#title {
+    display: flex;
+    justify-content: center;
+}
+
+#form-container {
+    padding-top: 5vh;
+    margin: 0 auto;
+    width: 40vh;
+    justify-content: center;
+}
+
+#form-list {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#span-style {
+    color: red;
+}
+#form-list{
+    height: 495px;
+    overflow-y: auto;
+}
+.card-style{
+
+    height: fit-content;
+}

@@ -1,0 +1,12 @@
+package com.kirian.reminders.entity.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kirian.reminders.entity.dao.IReminderDao;
+
+@Service
+public class UsersServiceImpl implements IUsersService {
+@Autowired
+private IUsersDao iusersdao;
+}

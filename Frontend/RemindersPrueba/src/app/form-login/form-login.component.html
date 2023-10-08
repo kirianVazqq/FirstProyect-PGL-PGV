@@ -1,0 +1,21 @@
+<div id="form-container">
+  <form *ngIf="!isAuthenticated" [formGroup]="formLogin" (ngSubmit)=" getUsersLogin()" >
+    <ion-item class="item-form">
+      <ion-input
+        label="Correo electronico"
+        type="email"
+        formControlName="email"
+        id="email-input"
+      ></ion-input>
+    </ion-item>
+    <ion-item class="item-form">
+      <ion-input
+        label="Contraseña"
+        formControlName="password"
+        id="password-input"
+        type="password"
+      ></ion-input>
+    </ion-item>
+    <ion-button type="submit">Iniciar</ion-button>
+  </form>
+</div>

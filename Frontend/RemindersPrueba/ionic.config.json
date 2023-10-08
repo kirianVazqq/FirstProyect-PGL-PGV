@@ -1,0 +1,7 @@
+{
+  "name": "RemindersPrueba",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
